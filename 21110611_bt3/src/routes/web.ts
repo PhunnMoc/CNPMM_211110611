@@ -1,6 +1,7 @@
-import express from 'express';
-import * as homeController from '../controllers/homeController.js';
-const router = express.Router();
+import { Router } from 'express';
+import * as homeController from '../controllers/home.controller.ts';
+
+const router = Router();
 
 router.get('/', homeController.getHomePage);
 router.post('/users/create', homeController.postCreateUser);

@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "ES2020",
+      "moduleResolution": "node",
+      "allowImportingTsExtensions": true,
+      "noEmit": true,
+      "outDir": "dist",
+      "rootDir": ".",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "lib": ["ES2020"],
+      "types": ["node", "express"]
+    },
+    "include": ["server.ts", "src/**/*"],
+    "exclude": ["node_modules", "dist"]
+  }
+  

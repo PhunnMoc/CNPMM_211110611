@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Users</title>
+</head>
+<body>
+  <h1>All Users</h1>
+  <p><a href="/">Create new user</a></p>
+  <table border="1" cellpadding="6">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (users && users.length) { %>
+        <% users.forEach(function(u, idx) { %>
+          <tr>
+            <td><%= idx + 1 %></td>
+            <td><%= u.firstName %> <%= u.lastName %></td>
+            <td><%= u.email %></td>
+            <td><%= u.address || '-' %></td>
+            <td>
+              <a href="/users/<%= u._id %>/edit">Edit</a> |
+              <a href="/users/<%= u._id %>/delete" onclick="return confirm('Delete?')">Delete</a>
+            </td>
+          </tr>
+        <% }) %>
+      <% } else { %>
+        <tr><td colspan="5">No users</td></tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
